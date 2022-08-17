@@ -1,9 +1,26 @@
 var state = { board: [], currentGame: [], savedGame: [] };
 
 function start() {
+  readLocalStorage();
   createBoard();
   newGame();
   render();
+}
+//Faz a leitura dos jogos salvos no localStorage
+function readLocalStorage() {
+  if (!window.localStorage) {
+    return;
+  }
+
+  var savedGamesLocalStorage = window.localStorage.getItem("saved-games");
+
+  if (savedGamesLocalStorage) {
+    state.savedGame = JSON.parse(savedGamesLocalStorage);
+  }
+}
+// Escreve os jogos salvos no localStorage
+function writeToLocalStorage() {
+  window.localStorage.setItem("saved-games", JSON.stringify(state.savedGame));
 }
 // Cria uma board (objeto) com 60 números
 function createBoard() {
@@ -141,6 +158,7 @@ function saveGame() {
     return;
   }
   state.savedGame.push(state.currentGame);
+  writeToLocalStorage();
   newGame();
 }
 // Adicionar número ao jogo
