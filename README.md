@@ -1,5 +1,5 @@
 # Simulador de jogos da Mega Sena
-> Aplicativo web capaz de salvar jogos de 6 números da Mega Sena, gerar jogos automáticos e salvar "in memoria".
+> Aplicativo web capaz de salvar jogos de 6 números da Mega Sena, gerar jogos automáticos e salvar "em memoria".
 
 Link para o app no netlify: https://tiny-cendol-a7e21c.netlify.app/
 
